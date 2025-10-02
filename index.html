@@ -1,0 +1,140 @@
+
+<!--
+STUDENT HOMEWORK EDITION
+File: index.html
+Goal: Readable, well-commented code for learning.
+Last Prepared: 2025-10-02 17:12:14
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+  <!-- The <head> contains page metadata, styles, and the title. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>دليل فعاليات المدينة</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+  </head>
+  <body>
+  <!-- The visible content of the page starts here. -->
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">🎉 دليل الفعاليات</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+      </ul>
+      <div class="dark-mode-toggle ms-3">
+          <input type="checkbox" id="darkModeToggle" class="form-check-input">
+          <label for="darkModeToggle" class="form-check-label">🌙</label>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero py-5">
+  <div class="container fade-in">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 text-white">
+        <h1 class="display-5 fw-bold">مرحباً بكم في <span class="text-warning">دليل فعاليات المدينة</span></h1>
+        <p class="lead mb-4">اكتشف أحدث الفعاليات: موسيقى، رياضة، ثقافة، وعائليات — كلها في مكان واحد.</p>
+        <a class="btn btn-warning btn-lg" href="events.html">استعرض جميع الفعاليات</a>
+      </div>
+      <div class="col-lg-6">
+        <div id="featuredCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel">
+          <div class="carousel-inner" id="featured-carousel-inner">
+            <!-- Slides injected by JS -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">السابق</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">التالي</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container my-5">
+  <section class="mb-5 fade-in">
+    <h2 class="h4 mb-3">المشاركون في المشروع</h2>
+    <div class="row g-3">
+      <!-- Please provide the names and IDs of the project participants -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="h6">الاسم: [Your Name]</h3>
+            <p class="mb-0">ID: [Your ID] • الدور: [Your Role]</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="h6">الاسم: [Your Name]</h3>
+            <p class="mb-0">ID: [Your ID] • الدور: [Your Role]</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="h6">الاسم: [Your Name]</h3>
+            <p class="mb-0">ID: [Your ID] • الدور: [Your Role]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-5 fade-in">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h2 class="h4 mb-0">تصنيفات سريعة</h2>
+      <div class="d-flex gap-2">
+        <span class="badge text-bg-primary category-chip" data-category="all">الكل</span>
+        <span class="badge text-bg-success category-chip" data-category="رياضة">رياضة</span>
+        <span class="badge text-bg-danger category-chip" data-category="موسيقى">موسيقى</span>
+        <span class="badge text-bg-warning category-chip" data-category="ثقافة">ثقافة</span>
+        <span class="badge text-bg-info category-chip" data-category="عائلي">عائلي</span>
+      </div>
+    </div>
+    <div class="row g-3" id="latest-grid">
+      <!-- Latest events injected by JS -->
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark text-white mt-5 py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <div>© <span id="year"></span> دليل فعاليات المدينة — جميع الحقوق محفوظة</div>
+    <div class="d-flex gap-3">
+      <a class="text-white-50" href="#" aria-label="facebook">Facebook</a>
+      <a class="text-white-50" href="#" aria-label="instagram">Instagram</a>
+      <a class="text-white-50" href="#" aria-label="x">X</a>
+    </div>
+  </div>
+</footer>
+<button id="scrollTopBtn" title="للأعلى">↑</button>
+
+
+<!-- Bootstrap Bundle + our JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+  <!-- End of visible content. -->
+
+  <!-- Scripts are usually placed before closing </body> for performance. -->
+</body>
+</html>
