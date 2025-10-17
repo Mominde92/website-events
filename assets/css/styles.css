@@ -1,118 +1,102 @@
-/*
-STUDENT HOMEWORK EDITION
-File: styles.css
-Goal: Clear structure with comments and simple rules.
-Last Prepared: 2025-10-02 17:12:14
-*/
-
-/* 1. Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
-/* 2. Root Variables & Color Palette */
-:root {
-  --primary-color: #0a2540; /* Deep Navy Blue */
-  --secondary-color: #00c9a7; /* Vibrant Teal */
-  --accent-color: #ffc107; /* Amber */
-  --background-light: #f8f9fa;
-  --text-light: #212529;
-  --background-dark: #1a1a1a;
-  --text-dark: #e9ecef;
-  --border-radius: 0.5rem;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --transition-speed: 0.3s;
-}
-
-/* 3. Base & Typography */
 body {
   font-family: 'Tajawal', sans-serif;
-  background-color: var(--background-light);
-  color: var(--text-light);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-/* 4. Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: #f8f9fa;
+  color: #212529;
 }
 
 .fade-in {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+     transform: translateY(10px); 
+    }
+  to   { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
 
-/* 5. Component Styling */
-
-/* Navbar */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  --bs-navbar-nav-link-padding-x: 1rem;
+  background: #ffffff;
+  padding: 10px;
 }
 
 .navbar .nav-link {
-    color: var(--primary-color);
-    font-weight: 700;
-    transition: color var(--transition-speed);
+  color: #0a2540;
+  font-weight: 700;
+  padding: 8px 12px;
+  text-decoration: none;
 }
 
-.navbar .nav-link:hover, .navbar .nav-link.active {
-    color: var(--secondary-color);
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #00c9a7;
 }
 
-/* Hero Header */
-.hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  padding: 6rem 0;
-  color: white;
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
+.hero 
+{
+  background: linear-gradient(135deg, #0a2540, #00c9a7);
+  color: #fff;
+  padding: 60px 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-align: center;
 }
 
-/* Cards */
-.card {
-  border: none;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+.card 
+{
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .card img {
-  object-fit: cover;
+  width: 100%;
   height: 200px;
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-/* Buttons */
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
+  background: #0a2540;
+  border: 1px solid #0a2540;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-
 .btn-primary:hover {
-    background-color: #001f3f; /* Darker shade of primary */
-    transform: translateY(-2px);
+  background: #001f3f;
 }
 
 .btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+  background: #00c9a7;
+  border: 1px solid #00c9a7;
+  color: #fff;
 }
 
-/* Scroll-to-top Button */
-#scrollTopBtn {
+.btn-danger 
+{
+  background: #dc3545;
+  border: 1px solid #dc3545;
+  color: #fff;
+}
+
+#scrollTopBtn 
+{
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -120,49 +104,79 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--primary-color);
-  color: white;
+  background: #0a2540;
+  color: #fff;
   border: none;
   font-size: 24px;
-  box-shadow: var(--shadow);
-  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+#scrollTopBtn:hover 
+{
+  background: #00c9a7;
+  transform: scale(1.05);
 }
 
-#scrollTopBtn:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.1);
+body[data-theme="dark"] 
+{
+  background: #1a1a1a;
+  color: #e9ecef;
+}
+body[data-theme="dark"] .navbar {
+  background: #1a1a1a;
+}
+body[data-theme="dark"] .card {
+  background: #2c2c2c;
+  color: #e9ecef;
+}
+body[data-theme="dark"] .nav-link {
+  color: #e9ecef;
+}
+body[data-theme="dark"] .nav-link:hover,
+body[data-theme="dark"] .nav-link.active {
+  color: #00c9a7;
 }
 
-/* 6. Dark Mode */
-body[data-theme='dark'] {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
+.dark-mode-toggle { 
+  cursor: pointer; padding: 8px;
+ }
+.custom-toggle {
+   cursor: pointer; font-size: 18px; 
+  }
+.custom-toggle:before { 
+  content: "🌙"; 
+}
+.dark-mode-toggle input:checked + .custom-toggle:before { 
+  content: "🌞"; 
 }
 
-body[data-theme='dark'] .navbar {
-    background-color: rgba(26, 26, 26, 0.8);
+#featuredCarousel 
+{
+  max-width: 600px;
+  margin: auto;
+}
+#featuredCarousel .carousel-item { height: 100%; }
+#featuredCarousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#featuredCarousel .carousel-caption {
+  right: 0; left: 0; bottom: 0;
+  padding: 20px;
+  text-align: right;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+#featuredCarousel .carousel-caption .btn {
+  background: #ffc107;
+  color: #212529;
+  border: none;
 }
 
-body[data-theme='dark'] .card {
-    background-color: #2c2c2c;
-    color: var(--text-dark);
-}
-
-body[data-theme='dark'] .nav-link {
-    color: var(--text-dark);
-}
-
-body[data-theme='dark'] .nav-link:hover, body[data-theme='dark'] .nav-link.active {
-    color: var(--secondary-color);
-}
-
-/* Dark mode toggle switch */
-.dark-mode-toggle {
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-/* 7. Component Adjustments */
-.modal-header .modal-title {
-    flex-grow: 1;
+.visually-hidden 
+{
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0; overflow: hidden;
 }
